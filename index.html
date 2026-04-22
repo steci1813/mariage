@@ -4,17 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invitation digitale S&C 2026</title>
+
+  <!-- Polices élégantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --navy:#082b57;
-      --navy-2:#0d3568;
-      --gold:#d8b45b;
-      --gold-soft:#f0dfab;
-      --cream:#f8f5ee;
-      --text:#1f2937;
+      --navy:#07162d;
+      --navy-2:#0b2548;
+      --navy-3:#143764;
+      --gold:#d7b46a;
+      --gold-light:#f1dfb0;
+      --gold-soft:#ead7a0;
+      --cream:#f8f4ec;
+      --mist:#eef3fa;
+      --text:#243041;
       --white:#ffffff;
-      --shadow:0 12px 30px rgba(0,0,0,.12);
-      --radius:22px;
+      --shadow:0 16px 40px rgba(4, 13, 28, .16);
+      --shadow-soft:0 10px 24px rgba(4, 13, 28, .08);
+      --radius:24px;
     }
 
     *{
@@ -24,11 +34,17 @@
       scroll-behavior:smooth;
     }
 
+    html, body{
+      overflow-x:hidden;
+    }
+
     body{
-      font-family: "Georgia", "Times New Roman", serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height:1.6;
+      font-family:"Montserrat", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.7), transparent 25%),
+        linear-gradient(180deg, #f8f4ec 0%, #f5f1e9 100%);
+      color:var(--text);
+      line-height:1.65;
     }
 
     a{
@@ -42,23 +58,33 @@
     }
 
     .container{
-      width:min(1120px, 92%);
+      width:min(1140px, 92%);
       margin:auto;
     }
 
     .script{
-      font-family: "Brush Script MT", "Lucida Handwriting", cursive;
-      letter-spacing:.5px;
+      font-family:"Alex Brush", cursive;
+      font-weight:400;
+    }
+
+    .serif{
+      font-family:"Cormorant Garamond", serif;
+    }
+
+    .caps{
+      font-family:"Cinzel", serif;
+      letter-spacing:1.4px;
     }
 
     .topbar{
       position:sticky;
       top:0;
       z-index:50;
-      background: rgba(8,43,87,.92);
-      backdrop-filter: blur(10px);
+      background:rgba(7,22,45,.88);
+      backdrop-filter:blur(12px);
       color:#fff;
-      border-bottom:1px solid rgba(216,180,91,.25);
+      border-bottom:1px solid rgba(215,180,106,.18);
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
     }
 
     .nav{
@@ -71,41 +97,43 @@
     }
 
     .brand{
-      font-size:1.2rem;
-      color:var(--gold-soft);
-      font-weight:bold;
-      letter-spacing:1px;
+      font-family:"Cinzel", serif;
+      font-size:1.1rem;
+      color:var(--gold-light);
+      font-weight:600;
+      letter-spacing:1.2px;
     }
 
     .menu{
       display:flex;
       flex-wrap:wrap;
-      gap:16px;
+      gap:18px;
       list-style:none;
-      font-size:.95rem;
+      font-size:.92rem;
     }
 
     .menu a{
       color:#fff;
-      opacity:.92;
+      opacity:.94;
+      transition:.25s ease;
     }
 
     .menu a:hover{
-      color:var(--gold-soft);
+      color:var(--gold-light);
     }
 
     .hero{
       position:relative;
       min-height:100vh;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.16) 0 2px, transparent 2px 100%),
-        radial-gradient(circle at 80% 15%, rgba(255,255,255,.10) 0 1.5px, transparent 1.5px 100%),
-        radial-gradient(circle at 70% 35%, rgba(255,255,255,.12) 0 1.8px, transparent 1.8px 100%),
-        radial-gradient(circle at 35% 60%, rgba(255,255,255,.12) 0 2px, transparent 2px 100%),
-        linear-gradient(180deg, rgba(5,15,35,.15), rgba(5,15,35,.78)),
-        linear-gradient(135deg, #153764 0%, #081c3d 55%, #020d1f 100%);
       color:#fff;
       overflow:hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.18) 0 1px, transparent 1px),
+        radial-gradient(circle at 75% 15%, rgba(255,255,255,.18) 0 1.2px, transparent 1.2px),
+        radial-gradient(circle at 85% 28%, rgba(255,255,255,.16) 0 1px, transparent 1px),
+        radial-gradient(circle at 25% 75%, rgba(255,255,255,.14) 0 1.4px, transparent 1.4px),
+        radial-gradient(circle at 60% 65%, rgba(255,255,255,.14) 0 1.2px, transparent 1.2px),
+        linear-gradient(135deg, #040d1c 0%, #0b2548 48%, #102f59 100%);
     }
 
     .hero::before{
@@ -113,96 +141,146 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 50% 15%, rgba(255,210,120,.22), transparent 28%),
-        radial-gradient(circle at 50% 100%, rgba(216,180,91,.18), transparent 35%);
+        radial-gradient(circle at 50% 10%, rgba(255,220,150,.22), transparent 24%),
+        radial-gradient(circle at 50% 110%, rgba(215,180,106,.16), transparent 35%);
       pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 10% 30%, rgba(255,255,255,.3) 0 1px, transparent 1px),
+        radial-gradient(circle at 22% 15%, rgba(255,255,255,.22) 0 1px, transparent 1px),
+        radial-gradient(circle at 35% 22%, rgba(255,255,255,.25) 0 1.1px, transparent 1.1px),
+        radial-gradient(circle at 55% 18%, rgba(255,255,255,.25) 0 1px, transparent 1px),
+        radial-gradient(circle at 72% 38%, rgba(255,255,255,.22) 0 1.2px, transparent 1.2px),
+        radial-gradient(circle at 82% 12%, rgba(255,255,255,.22) 0 1px, transparent 1px),
+        radial-gradient(circle at 90% 24%, rgba(255,255,255,.28) 0 1px, transparent 1px),
+        radial-gradient(circle at 78% 68%, rgba(255,255,255,.18) 0 1px, transparent 1px),
+        radial-gradient(circle at 18% 82%, rgba(255,255,255,.18) 0 1px, transparent 1px);
+      opacity:.8;
+      animation: twinkle 9s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    @keyframes twinkle{
+      0%{opacity:.35; transform:translateY(0);}
+      100%{opacity:.9; transform:translateY(-4px);}
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:30px;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
       align-items:center;
       min-height:calc(100vh - 70px);
-      padding:36px 0;
+      padding:54px 0;
     }
 
     .hero-copy{
-      max-width:680px;
+      max-width:700px;
     }
 
     .eyebrow{
-      color:var(--gold-soft);
+      color:var(--gold-light);
       text-transform:uppercase;
-      letter-spacing:2px;
-      font-size:.85rem;
-      margin-bottom:16px;
+      letter-spacing:2.4px;
+      font-size:.76rem;
+      margin-bottom:18px;
+      font-family:"Cinzel", serif;
     }
 
     .hero h1{
-      font-size:clamp(3rem, 7vw, 5.7rem);
-      line-height:.95;
-      color:var(--gold-soft);
-      margin-bottom:8px;
-      text-shadow:0 2px 18px rgba(0,0,0,.25);
+      font-family:"Alex Brush", cursive;
+      font-size:clamp(3.6rem, 8vw, 6.1rem);
+      line-height:.96;
+      color:#fff5d7;
+      margin-bottom:10px;
+      text-shadow:0 4px 22px rgba(0,0,0,.22);
     }
 
     .hero h2{
-      font-size:clamp(1.2rem, 3vw, 2rem);
-      font-weight:normal;
+      font-family:"Cormorant Garamond", serif;
+      font-size:clamp(1.35rem, 3vw, 2.3rem);
+      font-weight:500;
       margin-bottom:18px;
-      color:#f6e8c1;
+      color:#f6e7bb;
+      letter-spacing:.4px;
     }
 
     .hero p{
       max-width:620px;
-      font-size:1.08rem;
+      font-size:1rem;
       opacity:.96;
-      margin-bottom:26px;
+      margin-bottom:28px;
     }
 
     .hero-details{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      margin-bottom:24px;
+      margin-bottom:28px;
     }
 
     .badge{
-      border:1px solid rgba(240,223,171,.35);
+      border:1px solid rgba(241,223,176,.33);
       background:rgba(255,255,255,.08);
       color:#fff;
-      padding:10px 14px;
+      padding:10px 15px;
       border-radius:999px;
-      font-size:.95rem;
+      font-size:.9rem;
+      backdrop-filter:blur(8px);
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
     }
 
     .hero-card{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(240,223,171,.18);
-      border-radius:28px;
-      padding:20px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
+      position:relative;
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(241,223,176,.16);
+      border-radius:30px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+    }
+
+    .hero-card::before{
+      content:"✦";
+      position:absolute;
+      top:-10px;
+      right:18px;
+      width:34px;
+      height:34px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--gold-light), var(--gold));
+      color:var(--navy);
+      font-size:1rem;
+      box-shadow:0 8px 18px rgba(215,180,106,.35);
     }
 
     .hero-photo{
       width:100%;
-      min-height:430px;
-      border-radius:22px;
+      min-height:500px;
+      border-radius:24px;
       overflow:hidden;
-      border:1px solid rgba(240,223,171,.2);
+      border:1px solid rgba(241,223,176,.22);
       background:rgba(255,255,255,.08);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
     }
 
     .hero-photo img{
       width:100%;
       height:100%;
-      min-height:430px;
+      min-height:500px;
       object-fit:cover;
       object-position:center;
+      filter:saturate(1.02) contrast(1.02);
     }
 
     .cta-row{
@@ -213,29 +291,33 @@
     }
 
     .btn{
-      display:inline-block;
-      padding:14px 22px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 24px;
       border-radius:999px;
-      font-weight:bold;
-      transition:.25s ease;
+      font-weight:600;
+      transition:.28s ease;
       text-align:center;
+      min-height:50px;
     }
 
     .btn-gold{
-      background:var(--gold);
-      color:#14243b;
-      box-shadow:0 8px 20px rgba(216,180,91,.24);
+      background:linear-gradient(135deg, #f2e1b7 0%, #d7b46a 100%);
+      color:#12233c;
+      box-shadow:0 10px 22px rgba(215,180,106,.26);
     }
 
     .btn-gold:hover{
       transform:translateY(-2px);
-      background:#e5c56f;
+      box-shadow:0 14px 28px rgba(215,180,106,.32);
     }
 
     .btn-outline{
-      border:1.5px solid rgba(240,223,171,.55);
+      border:1.5px solid rgba(241,223,176,.58);
       color:#fff;
-      background:transparent;
+      background:rgba(255,255,255,.04);
+      backdrop-filter:blur(6px);
     }
 
     .btn-outline:hover{
@@ -244,14 +326,21 @@
     }
 
     .section{
-      padding:56px 0;
+      padding:74px 0;
+      position:relative;
+    }
+
+    .section.light{
+      background:linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,.18));
     }
 
     .section-title{
       text-align:center;
-      margin-bottom:14px;
-      font-size:clamp(2rem, 5vw, 3.4rem);
+      margin-bottom:12px;
+      font-size:clamp(2.2rem, 5vw, 3.6rem);
       color:var(--navy);
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
     }
 
     .section-subtitle{
@@ -259,13 +348,13 @@
       max-width:760px;
       margin:0 auto 34px;
       color:#5f6b7a;
-      font-size:1.03rem;
+      font-size:1rem;
     }
 
     .ornament{
-      width:160px;
+      width:180px;
       height:2px;
-      margin:0 auto 32px;
+      margin:0 auto 34px;
       background:linear-gradient(90deg, transparent, var(--gold), transparent);
       position:relative;
     }
@@ -273,25 +362,32 @@
     .ornament::before{
       content:"✦";
       position:absolute;
-      top:-13px;
+      top:-14px;
       left:50%;
       transform:translateX(-50%);
       color:var(--gold);
       background:var(--cream);
-      padding:0 12px;
+      padding:0 14px;
       font-size:1rem;
     }
 
-    .program-shell{
-      background:#fff;
-      border-radius:34px;
-      padding:30px 22px;
+    .program-shell,
+    .card,
+    .band-card,
+    .location-box{
       box-shadow:var(--shadow);
-      border:1px solid rgba(8,43,87,.06);
+    }
+
+    .program-shell{
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(10px);
+      border-radius:34px;
+      padding:32px 24px;
+      border:1px solid rgba(20,55,100,.07);
     }
 
     .timeline{
-      max-width:880px;
+      max-width:900px;
       margin:0 auto;
       display:grid;
       gap:22px;
@@ -305,7 +401,7 @@
       top:0;
       bottom:0;
       width:2px;
-      background:linear-gradient(180deg, rgba(216,180,91,.1), rgba(216,180,91,.85), rgba(216,180,91,.1));
+      background:linear-gradient(180deg, rgba(215,180,106,.1), rgba(215,180,106,.92), rgba(215,180,106,.1));
       transform:translateX(-50%);
     }
 
@@ -331,40 +427,47 @@
       width:58px;
       height:58px;
       border-radius:50%;
-      background:var(--navy);
-      color:var(--gold-soft);
+      background:linear-gradient(135deg, var(--navy-3), var(--navy));
+      color:var(--gold-light);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:1.2rem;
+      font-size:1.1rem;
       margin:auto;
-      border:3px solid var(--gold);
-      box-shadow:0 6px 16px rgba(8,43,87,.18);
+      border:2px solid var(--gold);
+      box-shadow:0 10px 22px rgba(20,55,100,.18);
       position:relative;
       z-index:2;
+      font-family:"Cinzel", serif;
     }
 
     .timeline-card{
-      background:linear-gradient(180deg, #fff, #fcfaf3);
-      border:1px solid rgba(216,180,91,.35);
-      border-radius:20px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(252,249,243,.98));
+      border:1px solid rgba(215,180,106,.28);
+      border-radius:22px;
       padding:18px 20px;
-      box-shadow:0 10px 24px rgba(0,0,0,.06);
+      box-shadow:var(--shadow-soft);
     }
 
     .timeline-card h3{
       color:var(--navy);
-      font-size:1.08rem;
+      font-size:1.25rem;
       margin-bottom:4px;
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
     }
 
     .timeline-card p{
       color:#556070;
-      font-size:.97rem;
+      font-size:.95rem;
     }
 
     .band{
-      background:var(--navy);
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,.09) 0 2px, transparent 2px 100%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.08) 0 2px, transparent 2px 100%),
+        radial-gradient(circle at 65% 70%, rgba(255,255,255,.08) 0 2px, transparent 2px 100%),
+        linear-gradient(135deg, #08192f 0%, #102b50 100%);
       color:#fff;
       position:relative;
       overflow:hidden;
@@ -375,10 +478,7 @@
       position:absolute;
       inset:0;
       background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,.09) 0 2px, transparent 2px 100%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.08) 0 2px, transparent 2px 100%),
-        radial-gradient(circle at 65% 70%, rgba(255,255,255,.08) 0 2px, transparent 2px 100%);
-      opacity:.9;
+        radial-gradient(circle at 50% 100%, rgba(215,180,106,.16), transparent 30%);
       pointer-events:none;
     }
 
@@ -392,45 +492,50 @@
     .band-card{
       position:relative;
       z-index:1;
-      max-width:900px;
+      max-width:920px;
       margin:auto;
       text-align:center;
-      padding:34px 28px;
-      border:1px solid rgba(216,180,91,.28);
-      border-radius:26px;
-      background:rgba(255,255,255,.04);
-      box-shadow:var(--shadow);
+      padding:38px 30px;
+      border:1px solid rgba(215,180,106,.28);
+      border-radius:28px;
+      background:rgba(255,255,255,.06);
+      backdrop-filter:blur(8px);
     }
 
     .band-card p{
-      font-size:1.02rem;
+      font-size:1rem;
       max-width:760px;
       margin:0 auto 14px;
+      color:#f7f6f1;
     }
 
-    .two-col{
+    .two-col,
+    .gift-block{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:24px;
     }
 
     .card{
-      background:#fff;
-      border-radius:24px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(8,43,87,.06);
+      background:rgba(255,255,255,.88);
+      border-radius:26px;
+      padding:28px;
+      border:1px solid rgba(20,55,100,.07);
+      backdrop-filter:blur(8px);
     }
 
     .card h3{
       color:var(--navy);
-      font-size:1.35rem;
-      margin-bottom:12px;
+      font-size:2rem;
+      margin-bottom:10px;
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
     }
 
     .card p{
       color:#5a6472;
       margin-bottom:12px;
+      font-size:.97rem;
     }
 
     .calendar-wrap{
@@ -439,29 +544,30 @@
 
     .calendar-box{
       margin-top:16px;
-      background:var(--navy-2);
+      background:linear-gradient(180deg, #0d2a51, #081d38);
       color:#fff;
       border-radius:24px;
       padding:22px;
       max-width:420px;
       margin-inline:auto;
-      box-shadow:0 14px 28px rgba(8,43,87,.18);
-      border:2px solid rgba(216,180,91,.35);
+      box-shadow:0 16px 30px rgba(8,29,56,.22);
+      border:1px solid rgba(215,180,106,.35);
     }
 
     .calendar-month{
-      color:var(--gold-soft);
+      color:var(--gold-light);
       text-transform:uppercase;
       letter-spacing:2px;
-      font-size:.9rem;
+      font-size:.82rem;
       margin-bottom:16px;
+      font-family:"Cinzel", serif;
     }
 
     .calendar-grid{
       display:grid;
       grid-template-columns:repeat(7, 1fr);
       gap:8px;
-      font-size:.95rem;
+      font-size:.92rem;
     }
 
     .calendar-grid div{
@@ -471,8 +577,8 @@
 
     .day-name{
       color:#c9d8ef;
-      font-size:.82rem;
-      font-weight:bold;
+      font-size:.78rem;
+      font-weight:600;
     }
 
     .empty{
@@ -481,28 +587,24 @@
     }
 
     .highlight{
-      background:var(--gold);
+      background:linear-gradient(135deg, #f2e1b7, #d7b46a);
       color:#0f233f;
-      font-weight:bold;
-      box-shadow:0 4px 14px rgba(216,180,91,.32);
-    }
-
-    .gift-block{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      align-items:start;
+      font-weight:700;
+      box-shadow:0 6px 16px rgba(215,180,106,.32);
     }
 
     .location-box{
-      background:linear-gradient(180deg, #0c2f5d, #082546);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,.10) 0 2px, transparent 2px),
+        radial-gradient(circle at 20% 75%, rgba(255,255,255,.08) 0 2px, transparent 2px),
+        linear-gradient(135deg, #08192f, #10315d);
       color:#fff;
       border-radius:30px;
-      padding:36px 26px;
+      padding:38px 28px;
       text-align:center;
-      box-shadow:var(--shadow);
       position:relative;
       overflow:hidden;
+      border:1px solid rgba(215,180,106,.18);
     }
 
     .location-box::after{
@@ -511,37 +613,40 @@
       left:0;
       right:0;
       bottom:0;
-      height:95px;
+      height:96px;
       background:
-        radial-gradient(circle at 6% 100%, rgba(216,180,91,.85), transparent 20px),
-        radial-gradient(circle at 14% 100%, rgba(216,180,91,.6), transparent 30px),
-        radial-gradient(circle at 22% 100%, rgba(216,180,91,.8), transparent 24px),
-        radial-gradient(circle at 33% 100%, rgba(216,180,91,.7), transparent 26px),
-        radial-gradient(circle at 49% 100%, rgba(216,180,91,.85), transparent 20px),
-        radial-gradient(circle at 61% 100%, rgba(216,180,91,.7), transparent 24px),
-        radial-gradient(circle at 77% 100%, rgba(216,180,91,.8), transparent 22px),
-        radial-gradient(circle at 88% 100%, rgba(216,180,91,.6), transparent 28px);
+        radial-gradient(circle at 6% 100%, rgba(215,180,106,.85), transparent 20px),
+        radial-gradient(circle at 14% 100%, rgba(215,180,106,.6), transparent 30px),
+        radial-gradient(circle at 22% 100%, rgba(215,180,106,.8), transparent 24px),
+        radial-gradient(circle at 33% 100%, rgba(215,180,106,.7), transparent 26px),
+        radial-gradient(circle at 49% 100%, rgba(215,180,106,.85), transparent 20px),
+        radial-gradient(circle at 61% 100%, rgba(215,180,106,.7), transparent 24px),
+        radial-gradient(circle at 77% 100%, rgba(215,180,106,.8), transparent 22px),
+        radial-gradient(circle at 88% 100%, rgba(215,180,106,.6), transparent 28px);
       opacity:.85;
       pointer-events:none;
     }
 
     .location-box h3{
-      color:var(--gold-soft);
-      font-size:2.1rem;
+      color:#fff3d2;
+      font-size:2.6rem;
       margin-bottom:14px;
+      font-family:"Cormorant Garamond", serif;
+      font-weight:600;
     }
 
     .location-box p{
       max-width:720px;
       margin:0 auto 14px;
-      font-size:1rem;
+      font-size:.98rem;
+      color:#eef2f9;
     }
 
     .map-image{
       margin-top:28px;
       border-radius:28px;
       overflow:hidden;
-      border:3px solid #fff;
+      border:4px solid #fff;
       box-shadow:var(--shadow);
       background:#ddd;
     }
@@ -550,6 +655,7 @@
       width:100%;
       height:auto;
       object-fit:cover;
+      object-position:center;
     }
 
     .details-grid{
@@ -560,13 +666,13 @@
     }
 
     .detail-card{
-      background:#0b2d56;
+      background:linear-gradient(180deg, #0d2a51, #0a2140);
       color:#fff;
-      border:2px solid rgba(216,180,91,.55);
+      border:1px solid rgba(215,180,106,.45);
       border-radius:22px;
-      padding:22px 18px;
+      padding:24px 18px;
       text-align:center;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-soft);
     }
 
     .detail-card .icon{
@@ -575,28 +681,25 @@
     }
 
     .detail-card h4{
-      color:var(--gold-soft);
+      color:#fff1c7;
       margin-bottom:8px;
       font-size:1rem;
-      letter-spacing:.4px;
+      letter-spacing:.8px;
+      font-family:"Cinzel", serif;
+      font-weight:500;
     }
 
     .detail-card p{
-      font-size:.95rem;
+      font-size:.93rem;
       color:#eff4fb;
     }
 
     .footer{
-      background:#05192f;
+      background:#051120;
       color:#dfe8f2;
       text-align:center;
-      padding:26px 12px;
-      font-size:.95rem;
-    }
-
-    .small{
-      font-size:.92rem;
-      color:#6b7280;
+      padding:28px 12px;
+      font-size:.9rem;
     }
 
     @media (max-width: 980px){
@@ -605,6 +708,15 @@
       .gift-block,
       .details-grid{
         grid-template-columns:1fr;
+      }
+
+      .hero{
+        min-height:auto;
+      }
+
+      .hero-inner{
+        min-height:auto;
+        gap:24px;
       }
 
       .timeline::before{
@@ -617,6 +729,9 @@
 
       .timeline-dot{
         grid-column:1 / 2;
+        width:52px;
+        height:52px;
+        font-size:1rem;
       }
 
       .timeline-card,
@@ -625,35 +740,181 @@
         grid-column:2 / 3;
         text-align:left;
       }
-
-      .hero{
-        min-height:auto;
-      }
-
-      .hero-inner{
-        min-height:auto;
-      }
     }
 
     @media (max-width: 640px){
+      .container{
+        width:min(100%, 92%);
+      }
+
+      .nav{
+        justify-content:center;
+        gap:12px;
+      }
+
+      .brand{
+        width:100%;
+        text-align:center;
+        font-size:1rem;
+      }
+
+      .menu{
+        justify-content:center;
+        gap:10px 14px;
+        font-size:.82rem;
+      }
+
+      .hero-inner{
+        padding:28px 0 36px;
+      }
+
+      .hero-copy{
+        text-align:center;
+        max-width:100%;
+      }
+
+      .eyebrow{
+        font-size:.68rem;
+        letter-spacing:1.6px;
+      }
+
       .hero h1{
+        font-size:3.1rem;
         line-height:1.02;
+      }
+
+      .hero h2{
+        font-size:1.15rem;
+        margin-bottom:14px;
+      }
+
+      .hero p{
+        font-size:.95rem;
+        margin-bottom:18px;
+      }
+
+      .hero-details{
+        justify-content:center;
+        gap:10px;
+        margin-bottom:18px;
+      }
+
+      .badge{
+        font-size:.82rem;
+        padding:8px 12px;
+      }
+
+      .cta-row{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+        padding:14px 18px;
+      }
+
+      .hero-card{
+        padding:14px;
+        border-radius:24px;
       }
 
       .hero-photo,
       .hero-photo img{
-        min-height:300px;
+        min-height:230px;
+        max-height:340px;
       }
 
       .section{
-        padding:64px 0;
+        padding:56px 0;
       }
 
+      .section-title{
+        font-size:2.4rem;
+      }
+
+      .section-subtitle{
+        font-size:.95rem;
+        margin-bottom:26px;
+      }
+
+      .ornament{
+        margin-bottom:24px;
+      }
+
+      .program-shell,
       .card,
       .band-card,
-      .location-box,
-      .program-shell{
-        padding:22px 18px;
+      .location-box{
+        padding:20px 16px;
+        border-radius:24px;
+      }
+
+      .timeline{
+        gap:16px;
+      }
+
+      .timeline-card{
+        padding:14px 15px;
+      }
+
+      .timeline-card h3{
+        font-size:1.12rem;
+      }
+
+      .timeline-card p{
+        font-size:.92rem;
+      }
+
+      .card h3{
+        font-size:1.8rem;
+      }
+
+      .card p,
+      .band-card p,
+      .location-box p,
+      .detail-card p{
+        font-size:.93rem;
+      }
+
+      .calendar-box{
+        padding:16px 12px;
+        border-radius:18px;
+      }
+
+      .calendar-grid{
+        gap:5px;
+        font-size:.86rem;
+      }
+
+      .calendar-grid div{
+        padding:6px 0;
+      }
+
+      .location-box h3{
+        font-size:2rem;
+      }
+
+      .map-image{
+        margin-top:20px;
+        border-radius:20px;
+      }
+
+      .map-image img{
+        max-height:240px;
+      }
+
+      .detail-card{
+        padding:18px 14px;
+        border-radius:18px;
+      }
+
+      .detail-card .icon{
+        font-size:1.5rem;
+      }
+
+      .footer{
+        font-size:.86rem;
+        padding:22px 12px;
       }
     }
   </style>
@@ -662,7 +923,7 @@
 
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">S&C 2026</div>
+      <div class="brand">S&amp;C 2026</div>
       <ul class="menu">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#programme">Programme</a></li>
@@ -678,7 +939,7 @@
     <div class="container hero-inner">
       <div class="hero-copy">
         <div class="eyebrow">And on this beautiful day</div>
-        <h1 class="script">Stéphane &amp; Cindria</h1>
+        <h1>Stéphane &amp; Cindria</h1>
         <h2>Say Yes.</h2>
         <p>
           Our stars aligned. The universe had a plan. And it led us to this day.
@@ -700,21 +961,15 @@
 
       <div class="hero-card">
         <div class="hero-photo">
-          <!-- ========================= -->
-          <!-- IMAGE 1 : PHOTO DU COUPLE -->
-          <!-- Remplace le fichier ci-dessous -->
-          <!-- par ta vraie photo -->
-          <!-- Exemple : images/stephane-cindria.jpg -->
-          <!-- ========================= -->
           <img src="photo-couple.jpg" alt="Photo de Stéphane et Cindria">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="programme">
+  <section class="section light" id="programme">
     <div class="container">
-      <h2 class="section-title script">From Morning Light to Starlight</h2>
+      <h2 class="section-title">From Morning Light to Starlight</h2>
       <div class="ornament"></div>
       <p class="section-subtitle">
         Une journée écrite dans les étoiles, du vodiondry jusqu’à la soirée dansante.
@@ -792,8 +1047,8 @@
 
   <section class="section band" id="dresscode">
     <div class="container">
-      <h2 class="section-title script">Sous Votre Plus Bel Éclat</h2>
-      <div class="ornament" style="background:linear-gradient(90deg, transparent, rgba(216,180,91,.9), transparent);"></div>
+      <h2 class="section-title">Sous Votre Plus Bel Éclat</h2>
+      <div class="ornament" style="background:linear-gradient(90deg, transparent, rgba(215,180,106,.92), transparent);"></div>
       <div class="band-card">
         <p>
           Pour cette journée écrite dans les étoiles, nous vous invitons à venir sur votre 31 :
@@ -809,11 +1064,11 @@
     </div>
   </section>
 
-  <section class="section" id="online">
+  <section class="section light" id="online">
     <div class="container">
       <div class="two-col">
         <div class="card">
-          <h3 class="script">For Our Loved Ones Joining Us Online</h3>
+          <h3>For Our Loved Ones Joining Us Online</h3>
           <p>
             Même à distance, nous serions ravis de vous savoir parmi nous pour ce moment si spécial.
           </p>
@@ -826,7 +1081,7 @@
         </div>
 
         <div class="card calendar-wrap" id="rsvp">
-          <h3 class="script">Will You Shine With Us?</h3>
+          <h3>Will You Shine With Us?</h3>
           <p>Merci de confirmer votre présence avant le <strong>18 juillet 2026</strong>.</p>
 
           <div class="calendar-box">
@@ -893,7 +1148,7 @@
     <div class="container">
       <div class="gift-block">
         <div class="card">
-          <h3 class="script">Votre présence, notre plus belle bénédiction</h3>
+          <h3>Votre présence, notre plus belle bénédiction</h3>
           <p>
             Le plus beau pour nous sera de vous avoir à nos côtés pour ce moment unique.
           </p>
@@ -904,7 +1159,7 @@
         </div>
 
         <div class="card">
-          <h3 class="script">Traditions</h3>
+          <h3>Traditions</h3>
           <p>
             Un moment traditionnel de contribution <strong>(rakitra)</strong> aura lieu durant la cérémonie civile.
           </p>
@@ -916,10 +1171,10 @@
     </div>
   </section>
 
-  <section class="section" id="lieu">
+  <section class="section band" id="lieu">
     <div class="container">
       <div class="location-box">
-        <h3 class="script">We Can’t Wait to Celebrate With You</h3>
+        <h3>We Can’t Wait to Celebrate With You</h3>
         <p>
           Nous avons hâte de célébrer ce jour si spécial avec vous.
         </p>
@@ -935,20 +1190,14 @@
       </div>
 
       <div class="map-image">
-        <!-- ========================= -->
-        <!-- IMAGE 2 : CARTE / ITINÉRAIRE -->
-        <!-- Remplace le fichier ci-dessous -->
-        <!-- par ta capture Maps -->
-        <!-- Exemple : images/itineraire-colonnades.jpg -->
-        <!-- ========================= -->
         <img src="map-colonnades.jpg" alt="Carte d'accès vers Les Colonnades">
       </div>
     </div>
   </section>
 
-  <section class="section" id="details">
+  <section class="section light" id="details">
     <div class="container">
-      <h2 class="section-title script">Helpful Details</h2>
+      <h2 class="section-title">Helpful Details</h2>
       <div class="ornament"></div>
 
       <div class="details-grid">
@@ -972,7 +1221,7 @@
       </div>
 
       <div class="cta-row" style="justify-content:center; margin-top:28px;">
-        <a href="#accueil" class="btn btn-outline" style="color:var(--navy); border-color:rgba(8,43,87,.25);">
+        <a href="#accueil" class="btn btn-outline" style="color:var(--navy); border-color:rgba(20,55,100,.22); background:rgba(255,255,255,.72);">
           Revenir à l’accueil
         </a>
       </div>
@@ -980,7 +1229,7 @@
   </section>
 
   <footer class="footer">
-    <p>Invitation digitale S&amp;C 2026 — version HTML à remplir</p>
+    <p>Invitation digitale S&amp;C 2026 — version élégante bleu nuit étoilé</p>
   </footer>
 
 </body>
